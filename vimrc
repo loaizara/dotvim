@@ -6,6 +6,7 @@ execute pathogen#infect()
 
 "Display line numbers.
 set number
+color desert
 
 "Display the status line always.
 set laststatus=2
@@ -34,7 +35,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 "Select Python checkers.
-let g:syntastic_python_checkers = ['flake8', 'pep8-naming', 'pyflakes', 'pep8']
+let g:syntastic_python_checkers = ['flake8', 'pep8-naming', 'pyflakes', 'pep8','flake8_cit_qa.core']
 
 "Airline settings.
 let g:airline#extensions#tabline#enabled = 1
@@ -77,5 +78,11 @@ function! s:RunShellCommand(cmdline)
 	1
 endfunction
 
+"autocmd VimEnter * NERDTree
 "Show whitespace characters and newlines.
-:set list listchars=tab:>-,eol:¶,trail:·
+":set list listchars=tab:>-,eol:¶,trail:·
+:command Asd NERDTree
+"noremap nt NERDTree
+noremap ? :Asd<return>
+"" vnoremap ? :
+
